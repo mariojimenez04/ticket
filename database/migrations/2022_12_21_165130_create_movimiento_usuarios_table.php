@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::create('movimiento_usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('ticket')->nullable();
-            $table->string('registrado_por')->nullable();
+            $table->string('movimiento')->nullable();
+            $table->string('usuario')->nullable();
             $table->string('equipo')->nullable();
-            $table->string('ip')->nullable();
-            // $table->string('navegador')->nullable();
+            $table->string('direccion_ip')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('movimiento_usuarios');
     }
 };

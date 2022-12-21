@@ -20,6 +20,7 @@ Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::post('/', [LoginController::class, 'authenticate'])->name('authenticate');
 
 /* Registrar usuarios */
-Route::get('/admin/register', [LoginController::class, 'register'])->name('register');
+Route::get('/admin/register', [LoginController::class, 'register'])->name('user.register');
+Route::post('/admin/register', [LoginController::class, 'store'])->name('user.store');
 
 Route::get('/index', [NavegacionController::class, 'index'])->name('index');

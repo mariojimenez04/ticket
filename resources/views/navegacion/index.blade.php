@@ -6,7 +6,12 @@
 
 @section('contenido')
 
+@if ( session('mensaje'))
+    <p class="bg-green-500 border-green-700 text-white px-4 py-3 rounded relative mt-5 mb-5">{{ session('mensaje') }}*</p>
+@endif
+
     <main class="flex gap-3 flex-col md:flex-row px-5 justify-center md:justify-between items-center h-screen">
+
 
         <a class="" href="">
             <div class="bg-white rounded shadow-2xl w-80 p-6">
