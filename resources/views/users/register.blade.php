@@ -6,6 +6,10 @@
 
 @section('contenido')
 
+    <div class="container mx-auto my-5">
+        <a href="{{ route('index') }}" class=" bg-blue-800 font-bold text-white rounded p-2">Volver</a>
+    </div>
+
     <main class="container mx-auto">
 
         <form action="{{ route('user.store') }}" method="POST">
@@ -67,7 +71,7 @@
 
             </div>
 
-            <button type="submit" class="p-2 bg-blue-800 text-white rounded mt-3">Registrar usuario</button>
+            <button type="submit" class="p-2 bg-blue-800 font-bold text-white rounded mt-3">Registrar usuario</button>
 
         </form>
 

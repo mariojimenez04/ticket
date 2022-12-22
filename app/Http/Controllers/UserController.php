@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class NavegacionController extends Controller
+class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +15,7 @@ class NavegacionController extends Controller
      */
     public function index()
     {
-        //Retornar la vista
-        return view('navegacion.index');
+        //
     }
 
     /**
@@ -28,7 +25,8 @@ class NavegacionController extends Controller
      */
     public function create()
     {
-        //
+        //Retornar la vista para registrar usuarios(Solo administradores)
+        return view('users.register');
     }
 
     /**
@@ -39,7 +37,32 @@ class NavegacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Ingresar los datos en la base de datos
+        $this->validate($request, [
+            'nombre' => 'required',
+            'empresa' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6|confirmed'
+        ]);
+
+        // MovimientoUsuario::create()
+
+        User::create([
+            'name' => $request->nombre,
+            'user_id' => 'usuario-' . rand(22171, 103929),
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'admin' => 0,
+            'sup' => 0,
+            'usuario' => 1,
+            'empresa' => $request->empresa,
+            // 'registrado_por' => auth()->user()->name,
+            'equipo' => gethostname(),
+            'ip' => $request->ip(),
+            // 'name' => $request->name,
+        ]);
+
+        return redirect()->route('index')->with('mensaje', 'Usuario registrado exitosamente');
     }
 
     /**
