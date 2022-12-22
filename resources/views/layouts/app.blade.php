@@ -8,8 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-        @vite('resources/css/app.css')
 
         <style>
             body {
@@ -17,33 +17,28 @@
             }
         </style>
     </head>
-    <body class="bg-gray-100">
-        <header class="p-5 border-b bg-white shadow sticky top-0">
-            <div class="container mx-auto flex justify-between items-center">
-                <a href="{{ route('index') }}">
-                    <h1 class="text-3xl font-black">
-                        IT Office Solutions
-                    </h1>
-                </a>
-
-                <nav class="flex gap-5 items-center">
-                    <div>
-                        <p class="text-gray-600">Hola: <strong>{{ auth()->user()->name }}</strong></p>
-                    </div>
-                    <button>
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
-                    </button>
-                    <form action="{{ route('user.logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="font-bold uppercase text-gray-600" >Cerrar sesion</button>
-                    </form>
-                </nav>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-md bg-white mb-5 p-3">
+            <div class="container-fluid">
+                <a href="{{ route('index') }}" class="navbar-brand font-bold ">IT Office Solutions</a>
             </div>
-        </header>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <i class="bi bi-bell"></i>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <div>
             @yield('contenido')
         </div>
 
     </body>
+    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
 </html>
