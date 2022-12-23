@@ -10,6 +10,7 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <style>
             body {
@@ -29,7 +30,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <i class="bi bi-bell"></i>
+                        <button class="button-1">
+                            <i class="bi bi-bell"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{ route('user.logout') }}" method="POST">
+                            @csrf
+                            <input class="border border-0 bg-transparent" type="submit" value="Cerrar sesion">
+                        </form>
                     </li>
                 </ul>
             </div>

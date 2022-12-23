@@ -8,7 +8,10 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {{-- @vite('resources/css/app.css') --}}
 
         <style>
             body {
@@ -16,9 +19,9 @@
             }
         </style>
     </head>
-    <body class="bg-gray-100">
+    <body class="bg-light">
 
-        <div>
+        <div class="centrado container">
             @yield('contenido')
         </div>
 
