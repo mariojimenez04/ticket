@@ -19,3 +19,7 @@
     border: none !important;
     background: transparent !important;
 }
+
+.w-5{
+    width: 2rem !important;
+}
