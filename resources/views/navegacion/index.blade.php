@@ -27,7 +27,7 @@
                             </svg>
                         </div>
                         <p class="card-text">Registrar nuevo ticket para que los encargados de sistemas te den continuidad en lo que requieres</p>
-                        <a href="" class="btn btn-primary">Registrar ticket</a>
+                        <a href="{{ route('ticket.create') }}" class="btn btn-primary">Registrar ticket</a>
                     </div>
                 </div>
 

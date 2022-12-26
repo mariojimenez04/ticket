@@ -44,6 +44,11 @@
             </div>
         </nav>
 
+        <div class="container mb-5">
+            <h2 class="text-start">@yield('subtitulo')</h2>
+            <hr>
+        </div>
+
         <div>
             @yield('contenido')
         </div>

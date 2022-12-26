@@ -37,3 +37,9 @@ Route::get('/index', [NavegacionController::class, 'index'])->name('index');
 **Index para los tickets
 */
 Route::get('/ticket/index', [TicketController::class, 'index'])->name('ticket.index');
+
+/*
+**Pagina para registrar los tickets
+*/
+Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+Route::post('/ticket/store', [TicketController::class, 'store'])->name('ticket.store');
