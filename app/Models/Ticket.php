@@ -15,6 +15,8 @@ class Ticket extends Model
         'equipo',
         'ip',
         'user_id',
-        'descripcion'
+        'completado',
+        'descripcion_problema',
+        'descripcion_resolucion',
     ];
 }

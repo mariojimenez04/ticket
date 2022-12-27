@@ -43,3 +43,14 @@ Route::get('/ticket/index', [TicketController::class, 'index'])->name('ticket.in
 */
 Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
 Route::post('/ticket/store', [TicketController::class, 'store'])->name('ticket.store');
+
+/**
+ * Pagina opara editar el registro del ticket
+*/
+Route::get('/ticket/edit/{tickets:ticket}', [TicketController::class, 'edit'])->name('ticket.edit');
+Route::post('/ticket/update/{tickets:ticket}', [TicketController::class, 'update'])->name('ticket.update');
+
+
+/**
+ * Metodo para eliminar el registro del ticket
+*/

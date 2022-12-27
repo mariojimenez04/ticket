@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::table('tickets', function (Blueprint $table) {
             //Registrar la descripcion
-            $table->longText('descripcion')->nullable();
+            $table->longText('descripcion_problema')->nullable();
+            $table->longText('descripcion_resolucion')->nullable();
         });
     }
 
@@ -28,7 +29,8 @@ return new class extends Migration
     {
         Schema::table('tickets', function (Blueprint $table) {
             //Eliminar la columna
-            $table->dropColumn('descripcion')->nullable();
+            $table->dropColumn('descripcion_problema')->nullable();
+            $table->dropColumn('descripcion_resolucion')->nullable();
         });
     }
 };

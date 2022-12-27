@@ -45,7 +45,7 @@
 
                         </div>
                         <p class="card-text">Dar seguimiento a los tickets que haz registrado y checar cual es su status</p>
-                        <a href="" class="btn btn-primary">Revisar tickets</a>
+                        <a href="{{ route('ticket.index') }}" class="btn btn-primary">Revisar tickets</a>
                     </div>
                 </div>
 
