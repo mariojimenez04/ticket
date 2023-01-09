@@ -12,7 +12,11 @@ class TicketController extends Controller
     public function index(){
         // dd();
         // $tickets = Ticket::where('user_id', auth()->user()->id)->get();
-        $tickets = Ticket::where('user_id', auth()->user()->id)->paginate(10);
+        if (auth()->user()->admin === 1) {
+            $tickets = Ticket::all();
+        }else {
+            $tickets = Ticket::where('user_id', auth()->user()->id)->paginate(10);
+        }
 
         return view('tickets.index', [
             'tickets' => $tickets,
@@ -66,9 +70,19 @@ class TicketController extends Controller
             'resolucion' => 'required'
         ]);
 
+        $registro->completado = 1 ?? 1;
         $registro->descripcion_resolucion = $request->resolucion ?? 'XXX';
         $registro->save();
 
         return redirect()->route('ticket.index')->with('mensaje', 'Registro actualizado correctamente');
+    }
+
+    public function destroy($id){
+        $resultado = Ticket::where('ticket', $id)->first();
+
+        $resultado->activo = 0 ?? 0;
+        $resultado->save();
+
+        return redirect()->route('ticket.index')->with('mensaje', 'Registro eliminado correctamente');
     }
 }

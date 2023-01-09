@@ -54,3 +54,5 @@ Route::post('/ticket/update/{tickets:ticket}', [TicketController::class, 'update
 /**
  * Metodo para eliminar el registro del ticket
 */
+
+Route::post('/ticket/delete/{tickets:ticket}', [TicketController::class, 'destroy'])->name('ticket.destroy');

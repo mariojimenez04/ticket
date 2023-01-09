@@ -18,5 +18,6 @@ class Ticket extends Model
         'completado',
         'descripcion_problema',
         'descripcion_resolucion',
+        'activo',
     ];
 }

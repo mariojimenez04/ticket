@@ -48,7 +48,7 @@
             <h2 class="text-start">@yield('subtitulo')</h2>
         </div>
 
-        <div>
+        <div class="mb-5">
             @yield('contenido')
         </div>
 
